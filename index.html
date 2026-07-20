@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Brevettuale - ProPla</title>
+    <!-- Font moderno e pulito -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET E STILI DI BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: #FDFBF7; /* Beige chiaro caldo */
+            color: #2C221E; /* Marrone scuro leggibile */
+            line-height: 1.6;
+        }
+
+        /* --- BARRA DI NAVIGAZIONE A PILLOLA --- */
+        .navbar {
+            background-color: #FFFFFF;
+            padding: 15px 40px;
+            display: flex;
+            gap: 12px;
+            border-bottom: 1px solid #E6DFD5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-pill {
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5C4A3E;
+            background-color: #F2ECE1;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            background-color: #E2D7C5;
+        }
+
+        .nav-pill.active {
+            background-color: #3E2723; /* Color Cacao */
+            color: #FFFFFF;
+        }
+
+        /* --- HEADER SCURO (CACAO / CAPPUCCINO) --- */
+        .hero-header {
+            background-color: #3E2723; /* Cacao Intenso */
+            color: #FDFBF7;
+            padding: 50px 40px;
+            border-bottom: 4px solid #8D6E63;
+        }
+
+        .hero-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-header p.subtitle {
+            font-size: 1.1rem;
+            color: #D7CCC8; /* Cappuccino chiaro */
+            margin-bottom: 30px;
+            max-width: 900px;
+        }
+
+        /* Metadata Bar */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            background-color: rgba(255, 255, 255, 0.07);
+            padding: 18px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .meta-item .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #BCAAA4;
+            margin-bottom: 4px;
+        }
+
+        .meta-item .value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        /* --- CONTENITORE PRINCIPALE --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title-sub {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8D6E63;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .section-main-title {
+            font-size: 1.8rem;
+            color: #2C221E;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: #4E3D35;
+            margin-bottom: 35px;
+            max-width: 1000px;
+        }
+
+        /* --- BOX "COME È ORGANIZZATO QUESTO SITO" --- */
+        .info-box {
+            background-color: #F5EFE6; /* Beige morbido */
+            border: 1px solid #E6DFD5;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 50px;
+        }
+
+        .info-box h3 {
+            font-size: 1.15rem;
+            color: #3E2723;
+            margin-bottom: 18px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .info-card-item h4 {
+            font-size: 0.95rem;
+            color: #5D4037;
+            margin-bottom: 6px;
+        }
+
+        .info-card-item p {
+            font-size: 0.88rem;
+            color: #6D4C41;
+        }
+
+        /* --- SCHEDE SEZIONI (CARDS CLICCABILI) --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .action-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E0D7CC;
+            border-radius: 14px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: #8D6E63; /* Bordo laterale colore cappuccino */
+        }
+
+        .action-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(62, 39, 35, 0.08);
+            border-color: #8D6E63;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #8D6E63;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #3E2723;
+            margin-bottom: 12px;
+        }
+
+        .card-metric {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #4E3D35;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .card-metric-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #8D6E63;
+            font-weight: 600;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .card-description {
+            font-size: 0.92rem;
+            color: #5D4037;
+            margin-bottom: 20px;
+        }
+
+        .card-link-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6D4C41;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .action-card:hover .card-link-text {
+            color: #3E2723;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGAZIONE A PILLOLE -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-pill active">Panoramica</a>
+        <a href="macro.html" class="nav-pill">Analisi Macro (Globale)</a>
+        <a href="micro.html" class="nav-pill">Analisi Micro (ProPla)</a>
+    </nav>
+
+    <!-- HEADER SCURO CACAO/CAPPUCCINO -->
+    <header class="hero-header">
+        <h1>Analisi Brevettuale</h1>
+        <p class="subtitle">Bioriciclo e Bioconversione delle Plastiche — Studio della Proprietà Intellettuale Globale e Posizionamento Strategico del Progetto ProPla.</p>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="label">Fonte Dati</div>
+                <div class="value">Lens.org</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Periodo</div>
+                <div class="value">1970 – 2026</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Data Estrazione</div>
+                <div class="value">Luglio 2026</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Unità d'Analisi</div>
+                <div class="value">Famiglie Estese (IPF)</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENUTO PRINCIPALE BEIGE -->
+    <main class="container">
+
+        <div class="section-title-sub">PANORAMICA DI RICERCA</div>
+        <h2 class="section-main-title">Valutazione della Proprietà Intellettuale</h2>
+        <p class="intro-text">
+            Questa piattaforma presenta l'analisi del panorama brevettuale internazionale focalizzata sulle tecnologie di 
+            <strong>bioriciclo, depolimerizzazione enzimatica e bioconversione delle plastiche</strong>. 
+            Lo studio raccoglie e mappa l'evoluzione tecnologica globale per contestualizzare la novità e la sostenibilità economica del progetto <strong>ProPla</strong>.
+        </p>
+
+        <!-- SECCO BOX "COME È ORGANIZZATO QUESTO SITO" -->
+        <div class="info-box">
+            <h3>Come è organizzato questo sito</h3>
+            <div class="info-grid">
+                <div class="info-card-item">
+                    <h4>Panoramica Generale</h4>
+                    <p>Fornisce il quadro d'insieme metodologico, la definizione del perimetro d'indagine e l'accesso diretto ai due livelli di analisi.</p>
+                </div>
+                <div class="info-card-item">
+                    <h4>Analisi Macro (Globale)</h4>
+                    <p>Esamina l'intera massa critica del settore (2.195 famiglie): trend temporali dal 1970 al 2026, geopolitica dei depositi, ceppi microbici ed esaminazione delle classi CPC.</p>
+                </div>
+                <div class="info-card-item">
+                    <h4>Analisi Micro (Focus ProPla)</h4>
+                    <p>Stringe il campo sulla nicchia specifica del PET e dell'ingegneria enzimatica per mappare i competitor diretti e identificare i vuoti brevettuali (*Freedom to Operate*).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCHEDE SEZIONI (CARDS CLICCABILI) -->
+        <div class="section-title-sub">LIVELLI DI ANALISI — CLICCA PER ESPLORARE</div>
+        <div class="cards-grid" style="margin-top: 15px;">
+
+            <!-- CARD ANALISI MACRO -->
+            <a href="macro.html" class="action-card">
+                <div>
+                    <div class="card-tag">LIVELLO 1</div>
+                    <div class="card-title">Analisi Macro</div>
+                    <div class="card-metric">
+                        2.195
+                        <span class="card-metric-label">Famiglie Brevettuali Estese</span>
+                    </div>
+                    <p class="card-description">
+                        Mappatura ad ampio spettro sul bioriciclo delle plastiche. Analisi del trend storico, distribuzione geografica (Cina, USA, UE), organismi biologici e attori industriali leader.
+                    </p>
+                </div>
+                <div class="card-link-text">
+                    Esplora la sezione Macro &rarr;
+                </div>
+            </a>
+
+            <!-- CARD ANALISI MICRO -->
+            <a href="micro.html" class="action-card">
+                <div>
+                    <div class="card-tag" style="color: #6D4C41;">LIVELLO 2</div>
+                    <div class="card-title">Analisi Micro (Focus ProPla)</div>
+                    <div class="card-metric" style="color: #6D4C41;">
+                        --
+                        <span class="card-metric-label">Famiglie nella Nicchia PET/Enzimi</span>
+                    </div>
+                    <p class="card-description">
+                        Studio mirato sulla depolimerizzazione del PET tramite ceppi ricombinanti e bioconversione ad alto valore aggiunto. Mappatura dei competitor diretti e analisi dei vuoti tecnologici.
+                    </p>
+                </div>
+                <div class="card-link-text">
+                    Esplora la sezione Micro &rarr;
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
