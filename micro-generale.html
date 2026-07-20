@@ -11,13 +11,14 @@
 
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --accent-color: #0d9488;
-            --bg-light: #f8fafc;
+            --primary-dark: #2b1810;
+            --accent-warm: #8c3b2b;
+            --bg-light: #fcfbfa;
             --card-bg: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
+            --text-dark: #2b1810;
+            --text-muted: #5a524e;
+            --border-color: #e2dbd5;
+            --badge-bg: #f0e8e4;
         }
 
         body {
@@ -30,7 +31,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -40,7 +41,7 @@
         }
 
         .back-nav a {
-            color: var(--accent-color);
+            color: var(--accent-warm);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -50,31 +51,36 @@
         }
 
         .back-nav a:hover {
-            color: var(--primary-color);
+            color: var(--primary-dark);
         }
 
         /* Header e Introduzione */
         .intro-header {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 35px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             border: 1px solid var(--border-color);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .intro-header h1 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-size: 2rem;
             margin-top: 0;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
+        .intro-header p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
         .meta-stats {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             margin-top: 20px;
             padding-top: 20px;
@@ -82,95 +88,110 @@
         }
 
         .stat-badge {
-            background: #eff6ff;
-            color: #1e40af;
-            padding: 8px 16px;
+            background: var(--badge-bg);
+            color: var(--primary-dark);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
+        }
+
+        .stat-badge-success {
+            background: #eaf5ea;
+            color: #1e6b20;
         }
 
         /* Sezioni dei Box */
         .analysis-box {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 35px;
+            padding: 30px;
             margin-bottom: 35px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            transition: box-shadow 0.3s;
-        }
-
-        .analysis-box:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
 
         .box-title {
-            color: var(--primary-color);
-            font-size: 1.5rem;
+            color: var(--primary-dark);
+            font-size: 1.4rem;
             margin-top: 0;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 12px;
+            border-bottom: 2px solid #f2ece8;
+            padding-bottom: 10px;
         }
 
-        .box-content {
+        /* Layout Grid a 2 colonne affiancate */
+        .box-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 25px;
+            align-items: start;
         }
 
         @media (min-width: 850px) {
-            .box-content {
+            .box-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        .chart-placeholder {
-            background: #f8fafc;
-            border: 2px dashed var(--border-color);
+        .chart-container {
+            background: #faf8f6;
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 280px;
-            text-align: center;
+            min-height: 250px;
         }
 
-        .chart-placeholder img {
+        .chart-container img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
         }
 
-        .data-details h4 {
-            color: var(--accent-color);
-            margin-top: 0;
-            font-size: 1.1rem;
+        /* Tabelle Dati */
+        .table-container {
+            width: 100%;
+            max-height: 480px;
+            overflow-y: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
         }
 
-        .data-details ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
         }
 
-        .data-details li {
-            margin-bottom: 10px;
+        .data-table th {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            font-weight: 600;
         }
 
-        .takeaway-note {
-            background: #f0fdf4;
-            border-left: 4px solid #16a34a;
-            padding: 12px 16px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.92rem;
-            color: #14532d;
-            margin-top: 15px;
+        .data-table td {
+            padding: 8px 14px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background-color: #fdfbf9;
+        }
+
+        .text-center {
+            text-align: center;
         }
     </style>
 </head>
@@ -196,130 +217,204 @@
             <div class="meta-stats">
                 <span class="stat-badge"><i class="fa-solid fa-folder"></i> 181 Famiglie Semplici</span>
                 <span class="stat-badge"><i class="fa-solid fa-folder-tree"></i> 179 Famiglie Estese</span>
-                <span class="stat-badge" style="background: #f0fdf4; color: #15803d;"><i class="fa-solid fa-check"></i> Elevata Coerenza del Dataset</span>
+                <span class="stat-badge stat-badge-success"><i class="fa-solid fa-check"></i> Elevata Coerenza del Dataset</span>
             </div>
         </header>
 
         <!-- BOX 1: TREND TEMPORALE -->
         <section class="analysis-box">
             <h2 class="box-title"><i class="fa-solid fa-chart-line"></i> 1. Trend Temporale delle Pubblicazioni (1990 - 2026)</h2>
-            <div class="box-content">
-                <div class="chart-placeholder">
-                    <!-- Inserisci qui l'immagine dell'istogramma del trend temporale generale -->
-                    <img src="trend_temporale_micro_generale.png" alt="Trend Temporale Micro Generale" style="max-width:100%; border-radius:8px;">
+            <div class="box-grid">
+                <div class="chart-container">
+                    <img src="trend_temporale_micro_generale.png" alt="Trend Temporale Micro Generale">
                 </div>
-                <div class="data-details">
-                    <h4>Analisi delle Fasi Storiche & Dati:</h4>
-                    <ul>
-                        <li><strong>Fase Primordiale (1990 – 2009):</strong> Depositi altamente sporadici e isolati (da 1 a 3 documenti all'anno), rappresentativi dei primi tentativi di depolimerizzazione biologica di laboratorio.</li>
-                        <li><strong>Prima Crescita Costante (2010 – 2018):</strong> Stabilizzazione della ricerca con volumi compresi tra 3 e 10 brevetti all'anno (picco di 10 nel 2018), spinta dalla prima attenzione normativa verso l'inquinamento da plastiche.</li>
-                        <li><strong>Flessione Fisiologica (2019 – 2020):</strong> Registrata una leggera contrazione (9 brevetti nel 2019 e 5 nel 2020), dovuta anche all'impatto della pandemia da COVID-19 sui laboratori di ricerca.</li>
-                        <li><strong>L'Exploit Recente (2021 – 2026):</strong> Impennata dei depositi, con ben <strong>116 brevetti pubblicati negli ultimi 6 anni</strong> (oltre il 64% dell'intero dataset). Il picco massimo storico è stato raggiunto nel <strong>2024 con 32 pubblicazioni</strong>, seguito dai volumi sostenuti del 2021 (24), 2023 (25), 2025 (19) e dai primi 16 documenti del 2026.</li>
-                    </ul>
-                    <div class="takeaway-note">
-                        <strong>Synthesis Key Takeaway:</strong> L'accelerazione registrata a partire dal 2021 dimostra che il bioriciclo enzimatico/microbico è entrato nella sua piena fase di maturazione applicativa. Il progetto ProPla si colloca esattamente al centro di questo picco di innovazione globale.
-                    </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Publication Year</th>
+                                <th class="text-center">Document Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1990</td><td class="text-center">1</td></tr>
+                            <tr><td>1998</td><td class="text-center">3</td></tr>
+                            <tr><td>1999</td><td class="text-center">1</td></tr>
+                            <tr><td>2003</td><td class="text-center">1</td></tr>
+                            <tr><td>2007</td><td class="text-center">1</td></tr>
+                            <tr><td>2008</td><td class="text-center">2</td></tr>
+                            <tr><td>2009</td><td class="text-center">1</td></tr>
+                            <tr><td>2010</td><td class="text-center">3</td></tr>
+                            <tr><td>2011</td><td class="text-center">3</td></tr>
+                            <tr><td>2012</td><td class="text-center">4</td></tr>
+                            <tr><td>2013</td><td class="text-center">8</td></tr>
+                            <tr><td>2014</td><td class="text-center">8</td></tr>
+                            <tr><td>2015</td><td class="text-center">8</td></tr>
+                            <tr><td>2016</td><td class="text-center">6</td></tr>
+                            <tr><td>2017</td><td class="text-center">8</td></tr>
+                            <tr><td>2018</td><td class="text-center">10</td></tr>
+                            <tr><td>2019</td><td class="text-center">9</td></tr>
+                            <tr><td>2020</td><td class="text-center">5</td></tr>
+                            <tr><td>2021</td><td class="text-center">24</td></tr>
+                            <tr><td>2022</td><td class="text-center">16</td></tr>
+                            <tr><td>2023</td><td class="text-center">25</td></tr>
+                            <tr><td>2024</td><td class="text-center">32</td></tr>
+                            <tr><td>2025</td><td class="text-center">19</td></tr>
+                            <tr><td>2026</td><td class="text-center">16</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
 
-       <!-- BOX 2: MAPPATURA GEOGRAFICA -->
-<section class="analysis-box">
-    <h2 class="box-title"><i class="fa-solid fa-earth-americas"></i> 2. Mappatura Geografica (Giurisdizioni)</h2>
-    <div class="box-content">
-        <div class="chart-placeholder">
-            <!-- Inserisci qui l'immagine della mappa geografica/treemap -->
-            <img src="mappatura_geografica_micro_generale.png" alt="Mappatura Geografica Micro Generale" style="max-width:100%; border-radius:8px;">
-        </div>
-        <div class="data-details">
-            <h4>Analisi Strategica ed Economica:</h4>
-            <ul>
-                <li><strong>Dominio Schiacciante della Cina (173 depositi):</strong> La Cina si conferma la vera e propria superpotenza mondiale nell'ambito della ricerca applicata e della protezione brevettuale per la bioconversione e il bioriciclo. Questo primato è guidato da una combinazione di imponenti politiche industriali statali (piani quinquennali focalizzati sulla sostenibilità e sulla gestione dei rifiuti polimerici) e da una fitta rete di istituti universitari e centri di ricerca pubblici molto attivi nella tutela legale delle biotecnologie.</li>
-                <li><strong>Il Ruolo Strategico degli Stati Uniti (22 depositi):</strong> Gli USA si posizionano al secondo posto. Sebbene numericamente staccati dalla Cina, i depositi americani sono storicamente caratterizzati da un alto valore commerciale (*Family Size* estesa e forte impatto di citazioni), spesso promossi da grandi multinazionali del settore chimico/biotecnologico o spin-off accademiche di alto livello.</li>
-                <li><strong>Il Canale Internazionale WO / WIPO (8 depositi):</strong> La presenza di 8 depositi tramite la procedura PCT (Patent Cooperation Treaty) evidenzia la volontà di proteggere le invenzioni chiave su scala globale prima di entrare nelle singole fasi nazionali.</li>
-                <li><strong>Il Quadro Europeo e Globale (2 depositi EP, 2 UK, 1 Spagna, ecc.):</strong> L'Ufficio Europeo dei Brevetti (EP) e i singoli Paesi europei (UK, Spagna) presentano volumi contenuti. Completano il panorama Taiwan (2), Australia (1), Eurasian Patents (1), Giappone (1) e Corea del Sud (1).</li>
-            </ul>
-            <div class="takeaway-note">
-                <strong>Synthesis Key Takeaway:</strong> Il mercato è nettamente guidato dai volumi asiatici (Cina), mentre la protezione in ambito occidentale si concentra su brevetti core ad alto impatto (USA e PCT). Per il progetto <strong>ProPla</strong>, la ridotta saturazione brevettuale diretta in Europa garantisce ampi margini di operatività legale (*Freedom to Operate*) sul mercato comunitario.
+        <!-- BOX 2: MAPPATURA GEOGRAFICA -->
+        <section class="analysis-box">
+            <h2 class="box-title"><i class="fa-solid fa-earth-americas"></i> 2. Mappatura Geografica (Giurisdizioni)</h2>
+            <div class="box-grid">
+                <div class="chart-container">
+                    <img src="mappatura_geografica_micro_generale.png" alt="Mappatura Geografica Micro Generale">
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Jurisdiction</th>
+                                <th class="text-center">Document Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>China</td><td class="text-center">173</td></tr>
+                            <tr><td>United States</td><td class="text-center">22</td></tr>
+                            <tr><td>WO - WIPO</td><td class="text-center">8</td></tr>
+                            <tr><td>European Patents</td><td class="text-center">2</td></tr>
+                            <tr><td>United Kingdom</td><td class="text-center">2</td></tr>
+                            <tr><td>Taiwan</td><td class="text-center">2</td></tr>
+                            <tr><td>Australia</td><td class="text-center">1</td></tr>
+                            <tr><td>Eurasian Patents</td><td class="text-center">1</td></tr>
+                            <tr><td>Spain</td><td class="text-center">1</td></tr>
+                            <tr><td>Japan</td><td class="text-center">1</td></tr>
+                            <tr><td>Korea, Republic of</td><td class="text-center">1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-       <!-- BOX 3: CODICI CPC -->
-<section class="analysis-box">
-    <h2 class="box-title"><i class="fa-solid fa-tags"></i> 3. Classificazione Tecnologica (Codici CPC)</h2>
-    <div class="box-content">
-        <div class="chart-placeholder">
-            <!-- Inserisci qui l'immagine della Treemap CPC -->
-            <img src="treemap_cpc_micro_generale.png" alt="Treemap Codici CPC Micro Generale" style="max-width:100%; border-radius:8px;">
-        </div>
-        <div class="data-details">
-            <h4>Analisi delle Classi Dominanti & Mappa ad Albero (Treemap):</h4>
-            <ul>
-                <li><strong>C12N15/70 (59 brevetti):</strong> Classe leader in assoluto. Riguarda specificamente i <em>vettori e i sistemi di espressione adattati per Escherichia coli</em>, evidenziando come l'ingegnerizzazione di questo chassis microbico rappresenti il cuore biotecnologico del settore.</li>
-                <li><strong>C12R2001/19 (36 brevetti):</strong> Codice di tassonomia biologica focalizzato sul microrganismo ospite <em>Escherichia coli</em>, che conferma la centralità del batterio nelle soluzioni brevettate.</li>
-                <li><strong>C12N9/18 (29 brevetti):</strong> Classe relativa alle <em>idrolasi di esteri carbossilici (Carboxylic ester hydrolases - EC 3.1.1)</em>, la famiglia enzimatica essenziale per la scissione dei legami estere nei polimeri come il PET.</li>
-                <li><strong>Y02W30/62 (29 brevetti):</strong> Codice trasversale CleanTech legato alla gestione dei rifiuti e alle <em>tecnologie per il riciclo e il recupero di materie plastiche</em>.</li>
-                <li><strong>Cluster da 23 Brevetti (Applicazioni Complementari e Matrici Supporto):</strong> Ampio gruppo di classi secondarie presenti con 23 brevetti ciascuna, divise tra la sezione <strong>A01N</strong> (biocidi, composti macromolecolari, regolatori di crescita e trattamenti con metalli/rame/boro) e la sezione <strong>C03C / C03B</strong> (vettori solidi, matrici in rame/zinco/silice e vetri antibatterici per l'immobilizzazione enzimatica/microbica).</li>
-            </ul>
-            <div class="takeaway-note">
-                <strong>Synthesis Key Takeaway:</strong> L'analisi CPC dimostra la netta convergenza del dataset verso due pilastri: da un lato l'espressione genica e le idrolasi in <em>E. coli</em> (classi <strong>C12N</strong> e <strong>C12R</strong>), dall'altro i sistemi di supporto avanzati e di immobilizzazione (classi <strong>A01N</strong> e <strong>C03C</strong>).
+        <!-- BOX 3: CODICI CPC -->
+        <section class="analysis-box">
+            <h2 class="box-title"><i class="fa-solid fa-tags"></i> 3. Classificazione Tecnologica (Codici CPC)</h2>
+            <div class="box-grid">
+                <div class="chart-container">
+                    <img src="treemap_cpc_micro_generale.png" alt="Treemap Codici CPC Micro Generale">
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>CPC Classification Code</th>
+                                <th class="text-center">Document Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>C12N15/70</td><td class="text-center">59</td></tr>
+                            <tr><td>C12R2001/19</td><td class="text-center">36</td></tr>
+                            <tr><td>C12N9/18</td><td class="text-center">29</td></tr>
+                            <tr><td>Y02W30/62</td><td class="text-center">29</td></tr>
+                            <tr><td>A01N25/00</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N25/10</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N59/00</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N59/06</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N59/14</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N59/16</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N59/20</td><td class="text-center">23</td></tr>
+                            <tr><td>A01N59/26</td><td class="text-center">23</td></tr>
+                            <tr><td>C03B19/1005</td><td class="text-center">23</td></tr>
+                            <tr><td>C03B37/01</td><td class="text-center">23</td></tr>
+                            <tr><td>C03C10/0009</td><td class="text-center">23</td></tr>
+                            <tr><td>C03C2204/02</td><td class="text-center">23</td></tr>
+                            <tr><td>C03C3/062</td><td class="text-center">23</td></tr>
+                            <tr><td>C03C3/064</td><td class="text-center">23</td></tr>
+                            <tr><td>C03C3/066</td><td class="text-center">23</td></tr>
+                            <tr><td>C03C3/085</td><td class="text-center">23</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-
+        </section>
 
         <!-- BOX 4: TOP APPLICANTS -->
-<section class="analysis-box">
-    <h2 class="box-title"><i class="fa-solid fa-building-columns"></i> 4. Principali Richiedenti (Top 20 Applicants)</h2>
-    <div class="box-content">
-        <div class="chart-placeholder">
-            <!-- Inserisci qui l'immagine della Wordcloud / Mappa concettuale dei Top Applicants -->
-            <img src="top_applicants_micro_generale.png" alt="Top Applicants Micro Generale" style="max-width:100%; border-radius:8px;">
-        </div>
-        <div class="data-details">
-            <h4>Analisi dei Principali Depositanti:</h4>
-            <ul>
-                <li><strong>Corning INC (23 brevetti):</strong> Leader industriale privato indiscusso del dataset. La multinazionale statunitense detiene la quota singola più alta, focalizzata su matrici avanzate, supporti di immobilizzazione e materiali.</li>
-                <li><strong>Forte Dominio Accademico e Statale Cinese:</strong> Ampia concentrazione di atenei e istituti di ricerca pubblici della Cina. Spiccano <strong>Univ Jiangnan (16)</strong>, leader nella biotecnologia delle fermentazioni, <strong>Nanjing University of Technology (12)</strong>, <strong>Univ Tianjin (8)</strong> e <strong>Univ Shanghai Jiatong (6)</strong>.</li>
-                <li><strong>Centri di Ricerca Marina e Ambientale:</strong> Presenza di enti specializzati come <em>Third Institute Of Oceanography Mini Of Natural Resources (4)</em>, <em>South China Sea Inst Oceanology Cas (3)</em> e <em>Ocean Univ China (2)</em>, legati all'isolamento di ceppi e enzimi degradativi da ambienti marini.</li>
-                <li><strong>Presenza Internazionale e Aziendale:</strong> In Europa spiccano la <strong>Univ Madrid Complutense (3)</strong> in ambito accademico e la francese <strong>Metabolic Explorer SA (2)</strong> tra le biotech industriali. Completano il quadro diversi player aziendali cinesi (es. <em>Suzhou Jonathan New Materials, Chongqing Pelite, Shanghai Pelite</em>) e singoli inventori accademici (<em>Chen Guoqiang, Chen Jinchun, Gao Haijun</em>).</li>
-            </ul>
-            <div class="takeaway-note">
-                <strong>Synthesis Key Takeaway:</strong> Il panorama tecnologico è caratterizzato da un unico grande player industriale privato globale (Corning INC) affiancato da una fitta rete di università pubbliche asiatiche. La forte frammentazione della quota rimanente offre a <strong>ProPla</strong> ampi margini per posizionarsi come soluzione innovativa e scalabile nel mercato europeo ed internazionale.
+        <section class="analysis-box">
+            <h2 class="box-title"><i class="fa-solid fa-building-columns"></i> 4. Principali Richiedenti (Top 20 Applicants)</h2>
+            <div class="box-grid">
+                <div class="chart-container">
+                    <img src="top_applicants_micro_generale.png" alt="Top Applicants Micro Generale">
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Applicant Name Exact</th>
+                                <th class="text-center">Document Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Corning INC</td><td class="text-center">23</td></tr>
+                            <tr><td>Univ Jiangnan</td><td class="text-center">16</td></tr>
+                            <tr><td>Nanjing University Of Technology</td><td class="text-center">12</td></tr>
+                            <tr><td>Univ Tianjin</td><td class="text-center">8</td></tr>
+                            <tr><td>Univ Shanghai Jiaotong</td><td class="text-center">6</td></tr>
+                            <tr><td>Third Institute Of Oceanography Mini Of Natural Resources</td><td class="text-center">4</td></tr>
+                            <tr><td>South China Sea Inst Oceanology Cas</td><td class="text-center">3</td></tr>
+                            <tr><td>Suzhou Jonathan New Materials Technology CO LTD</td><td class="text-center">3</td></tr>
+                            <tr><td>Univ Madrid Complutense</td><td class="text-center">3</td></tr>
+                            <tr><td>Univ South China Tech</td><td class="text-center">3</td></tr>
+                            <tr><td>Univ Tianjin Science & Tech</td><td class="text-center">3</td></tr>
+                            <tr><td>Chen Guoqiang</td><td class="text-center">2</td></tr>
+                            <tr><td>Chen Jinchun</td><td class="text-center">2</td></tr>
+                            <tr><td>Chongqing Pelite New Mat CO LTD</td><td class="text-center">2</td></tr>
+                            <tr><td>Dalian Inst Chem & Physics Cas</td><td class="text-center">2</td></tr>
+                            <tr><td>Gao Haijun</td><td class="text-center">2</td></tr>
+                            <tr><td>Metabolic Explorer SA</td><td class="text-center">2</td></tr>
+                            <tr><td>Nanjing Hesu Times Antibiosis Materials Tech CO LTD</td><td class="text-center">2</td></tr>
+                            <tr><td>Ocean Univ China</td><td class="text-center">2</td></tr>
+                            <tr><td>Shanghai Pelite Chemical New Mat CO LTD</td><td class="text-center">2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- BOX 5: STATO LEGALE -->
-<section class="analysis-box">
-    <h2 class="box-title"><i class="fa-solid fa-scale-balanced"></i> 5. Stato Legale dei Brevetti (Legal Status)</h2>
-    <div class="box-content">
-        <div class="chart-placeholder">
-            <!-- Inserisci qui l'immagine del grafico a barre dello Stato Legale -->
-            <img src="stato_legale_micro_generale.png" alt="Stato Legale Brevetti Micro Generale" style="max-width:100%; border-radius:8px;">
-        </div>
-        <div class="data-details">
-            <h4>Analisi dello Stato Giuridico & Dati:</h4>
-            <ul>
-                <li><strong>Pending (72 brevetti - 33.6%):</strong> La categoria maggioritaria comprende le domande di brevetto attualmente in fase di esame presso gli uffici brevettuali. Questo dato conferma la giovinezza e la forte dinamicità tecnologica del settore.</li>
-                <li><strong>Discontinued (63 brevetti - 29.4%):</strong> Domande abbandonate o ritirate dai depositanti prima della concessione definitiva, spesso a seguito di selezioni di mercato, mancato superamento delle prove di scalabilità industriale o costi di mantenimento/prosecuzione non giustificati.</li>
-                <li><strong>Active (56 brevetti - 26.2%):</strong> Titoli brevettuali concessi e attualmente in vigore (*Granted*). Rappresentano il nucleo di proprietà intellettuale solida da monitorare attentamente per le analisi di *Freedom to Operate* (FTO).</li>
-                <li><strong>Inactive (18 brevetti - 8.4%):</strong> Titoli concessi in passato ma successivamente decaduti o non rinnovati per il mancato pagamento delle tasse di mantenimento annuali.</li>
-                <li><strong>Expired (5 brevetti - 2.3%):</strong> Brevetti giunti al termine naturale della copertura legale (20 anni dal deposito). Con soli 5 titoli scaduti, la quota di tecnologia liberamente utilizzabile nel pubblico dominio è estremamente ridotta, a riprova che la depolimerizzazione tramite <em>E. coli</em> ed enzimi è un campo quasi interamente recente e protetto da diritti moderni.</li>
-            </ul>
-            <div class="takeaway-note">
-                <strong>Synthesis Key Takeaway:</strong> Il mercato brevettuale si presenta estremamente "giovane" e in costante trasformazione: oltre il 33% dei titoli è ancora in corso di valutazione (*Pending*), mentre la percentuale marginale di brevetti scaduti (*Expired*) sottolinea come le tecnologie di bioriciclo di nuova generazione siano quasi totalmente coperte da diritti di PI recenti.
+        <!-- BOX 5: STATO LEGALE -->
+        <section class="analysis-box">
+            <h2 class="box-title"><i class="fa-solid fa-scale-balanced"></i> 5. Stato Legale dei Brevetti (Legal Status)</h2>
+            <div class="box-grid">
+                <div class="chart-container">
+                    <img src="stato_legale_micro_generale.png" alt="Stato Legale Brevetti Micro Generale">
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Legal Status</th>
+                                <th class="text-center">Document Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Pending</td><td class="text-center">72</td></tr>
+                            <tr><td>Discontinued</td><td class="text-center">63</td></tr>
+                            <tr><td>Active</td><td class="text-center">56</td></tr>
+                            <tr><td>Inactive</td><td class="text-center">18</td></tr>
+                            <tr><td>Expired</td><td class="text-center">5</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-        
     </div>
 
 </body>
 </html>
+
+
+
