@@ -457,9 +457,21 @@
 
             <!-- QUERY UTILIZZATA -->
             <div class="query-box">
-                <h4>Stringa di Ricerca Utilizzata per l'analisi Macro (Query Booleana)</h4>
+                <h4>Stringa di Ricerca Utilizzata per l'analisi Macro</h4>
                 <div class="query-code">
                     (title:(plastic* OR polymer* OR PET) OR abstract:(plastic* OR polymer* OR PET)) AND (title:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation") OR abstract:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation"))
+                </div>
+            </div>
+            <p class="query-note">
+                <strong>Nota metodologica:</strong> La ricerca è stata deliberatamente limitata richiedendo al server di mostrare solo i brevetti in cui le parole chiave fossero contenute esclusivamente nel titolo o nell'abstract, per considerare unicamente le famiglie di brevetti che pongono la bioconversione della plastica come elemento principale della propria invenzione.
+            </p>
+        </section>
+
+         <!-- QUERY UTILIZZATA -->
+            <div class="query-box">
+                <h4>Stringa di Ricerca Utilizzata per l'analisi Micro</h4>
+                <div class="query-code">
+                    (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:(("Escherichia coli" OR "E. coli") AND (degradation OR bioconversion OR PETase OR cutinase OR depolymerization)) OR abstract:(("Escherichia coli" OR "E. coli") AND (degradation OR bioconversion OR PETase OR cutinase OR depolymerization)))
                 </div>
             </div>
             <p class="query-note">
