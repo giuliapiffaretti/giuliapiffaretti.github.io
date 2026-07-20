@@ -358,6 +358,115 @@
             </a>
 
         </div>
+                <!-- SEZIONE METODOLOGIA DI RICERCA -->
+        <style>
+            .methodology-section {
+                margin-top: 60px;
+                background-color: #FFFFFF;
+                border: 1px solid #E0D7CC;
+                border-radius: 14px;
+                padding: 35px;
+            }
+
+            .methodology-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .method-card {
+                background-color: #FDFBF7;
+                border: 1px solid #E6DFD5;
+                border-radius: 10px;
+                padding: 22px;
+            }
+
+            .method-card h4 {
+                color: #3E2723;
+                font-size: 1.05rem;
+                margin-bottom: 8px;
+                font-weight: 600;
+            }
+
+            .method-card p {
+                font-size: 0.9rem;
+                color: #5D4037;
+                line-height: 1.5;
+            }
+
+            .query-box {
+                background-color: #3E2723;
+                color: #FDFBF7;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 25px;
+                border-left: 5px solid #8D6E63;
+            }
+
+            .query-box h4 {
+                color: #D7CCC8;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                margin-bottom: 10px;
+            }
+
+            .query-code {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 0.88rem;
+                color: #E2D7C5;
+                word-break: break-all;
+                line-height: 1.5;
+                background-color: rgba(255, 255, 255, 0.05);
+                padding: 12px;
+                border-radius: 6px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .query-note {
+                font-size: 0.88rem;
+                color: #6D4C41;
+                margin-top: 12px;
+                font-style: italic;
+            }
+        </style>
+
+        <section class="methodology-section">
+            <div class="section-title-sub">FRAMEWORK DI RICERCA</div>
+            <h2 class="section-main-title" style="font-size: 1.5rem; margin-bottom: 10px;">Obiettivo Generale e Metodologia</h2>
+            
+            <p class="intro-text" style="margin-bottom: 25px; font-size: 0.98rem;">
+                L'obiettivo della presente analisi brevettuale è quello di mappare lo stato dell'arte brevettuale a livello globale nel settore della <strong>bioconversione del PET</strong>, con il fine di valutare l'originalità tecnologica del progetto <strong>ProPla</strong> e valutarne la libertà di azione e il vantaggio competitivo sul mercato. La ricerca si propone quindi di andare ad analizzare il <em>patent landscape</em> nel quale si inserisce ProPla, identificando competitor e valutando la distribuzione temporale e geografica di brevetti con validazioni simili.
+            </p>
+
+            <div class="methodology-grid">
+                <div class="method-card">
+                    <h4>Banche Dati e Analytics</h4>
+                    <p>La metodologia adottata si basa sull'utilizzo integrato delle principali banche dati brevettuali internazionali, in particolare <strong>Lens.org</strong>.</p>
+                </div>
+                <div class="method-card">
+                    <h4>Unità d'Analisi (IPF)</h4>
+                    <p>Per evitare sovrapposizioni e doppi conteggi derivanti da depositi multipli della medesima invenzione in più Paesi, l'unità di analisi fondamentale è rappresentata dalle <strong>International Patent Families (IPF)</strong>.</p>
+                </div>
+                <div class="method-card">
+                    <h4>Strategia di Estrazione</h4>
+                    <p>La strategia si avvale dell'uso combinato di interrogazioni booleane avanzate basate su parole chiave e codici di classificazione <strong>CPC (Cooperative Patent Classification)</strong>.</p>
+                </div>
+            </div>
+
+            <!-- QUERY UTILIZZATA -->
+            <div class="query-box">
+                <h4>Stringa di Ricerca Utilizzata per l'analisi Macro (Query Booleana)</h4>
+                <div class="query-code">
+                    (title:(plastic* OR polymer* OR PET) OR abstract:(plastic* OR polymer* OR PET)) AND (title:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation") OR abstract:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation"))
+                </div>
+            </div>
+            <p class="query-note">
+                <strong>Nota metodologica:</strong> La ricerca è stata deliberatamente limitata richiedendo al server di mostrare solo i brevetti in cui le parole chiave fossero contenute esclusivamente nel titolo o nell'abstract, per considerare unicamente le famiglie di brevetti che pongono la bioconversione della plastica come elemento principale della propria invenzione.
+            </p>
+        </section>
+
 
     </main>
 
