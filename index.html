@@ -467,17 +467,28 @@
             </p>
         </section>
 
-         <!-- QUERY UTILIZZATA -->
-            <div class="query-box">
-                <h4>Stringa di Ricerca Utilizzata per l'analisi Micro</h4>
-                <div class="query-code">
-                    (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:(("Escherichia coli" OR "E. coli") AND (degradation OR bioconversion OR PETase OR cutinase OR depolymerization)) OR abstract:(("Escherichia coli" OR "E. coli") AND (degradation OR bioconversion OR PETase OR cutinase OR depolymerization)))
-                </div>
-            </div>
-            <p class="query-note">
-                <strong>Nota metodologica:</strong> La ricerca è stata deliberatamente limitata richiedendo al server di mostrare solo i brevetti in cui le parole chiave fossero contenute esclusivamente nel titolo o nell'abstract, per considerare unicamente le famiglie di brevetti che pongono la bioconversione della plastica come elemento principale della propria invenzione.
-            </p>
-        </section>
+        <!-- STRINGA DI RICERCA: ANALISI MICRO (GENERALE/AMPIA) -->
+<div class="query-box">
+    <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MICRO (GENERALE)</h4>
+    <div class="query-code">
+        (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase) OR abstract:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase))
+    </div>
+</div>
+<p class="nota-metodologica">
+    <em><strong>Nota metodologica:</strong> Questa prima estrazione micro mappa in modo ampio i principali meccanismi ed enzimi di bioconversione/degradazione (PETasi, cutinasi, depolimerasi) presenti nel titolo e nell'abstract dei brevetti.</em>
+</p>
+
+<!-- STRINGA DI RICERCA: ANALISI MICRO (FOCUS E. COLI) -->
+<div class="query-box">
+    <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MICRO (FOCUS ESCHERICHIA COLI)</h4>
+    <div class="query-code">
+        (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:("Escherichia coli" OR "E. coli") OR abstract:("Escherichia coli" OR "E. coli")) AND (title:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase) OR abstract:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase))
+    </div>
+</div>
+<p class="nota-metodologica">
+    <em><strong>Nota metodologica:</strong> Questo sotto-insieme isola esclusivamente le famiglie brevettuali che citano esplicitamente Escherichia coli o E. coli come piattaforma biologica o sistema di espressione per la degradazione della plastica.</em>
+</p>
+
 
 
     </main>
