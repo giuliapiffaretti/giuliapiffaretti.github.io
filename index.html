@@ -251,6 +251,79 @@
         .action-card:hover .card-link-text {
             color: #3E2723;
         }
+
+        /* --- SEZIONI METODOLOGIA E QUERY BOX --- */
+        .methodology-section {
+            margin-top: 60px;
+            background-color: #FFFFFF;
+            border: 1px solid #E0D7CC;
+            border-radius: 14px;
+            padding: 35px;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .method-card {
+            background-color: #FDFBF7;
+            border: 1px solid #E6DFD5;
+            border-radius: 10px;
+            padding: 22px;
+        }
+
+        .method-card h4 {
+            color: #3E2723;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .method-card p {
+            font-size: 0.9rem;
+            color: #5D4037;
+            line-height: 1.5;
+        }
+
+        .query-box {
+            background-color: #3E2723;
+            color: #FDFBF7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 5px solid #8D6E63;
+        }
+
+        .query-box h4 {
+            color: #D7CCC8;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .query-code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.88rem;
+            color: #E2D7C5;
+            word-break: break-all;
+            line-height: 1.5;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .query-note {
+            font-size: 0.88rem;
+            color: #6D4C41;
+            margin-top: 10px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -311,7 +384,7 @@
                     <p>Esamina l'intera massa critica del settore (2.195 famiglie), focalizzandosi in particolare sui trend temporali dal 1970 al 2026, sulla geopolitica delle pubblicazioni, sui ceppi microbici maggiormente utilizzati e sull'esaminazione delle classi CPC.</p>
                 </div>
                 <div class="info-card-item">
-                    <h4>Analisi Micro </h4>
+                    <h4>Analisi Micro</h4>
                     <p>Stringe il campo della ricerca alla nicchia specifica del PET e dell'ingegneria enzimatica per studiare il landscape brevettuale più vicino al mondo di ProPla.</p>
                 </div>
             </div>
@@ -358,80 +431,8 @@
             </a>
 
         </div>
-                <!-- SEZIONE METODOLOGIA DI RICERCA -->
-        <style>
-            .methodology-section {
-                margin-top: 60px;
-                background-color: #FFFFFF;
-                border: 1px solid #E0D7CC;
-                border-radius: 14px;
-                padding: 35px;
-            }
 
-            .methodology-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 25px;
-                margin-top: 20px;
-            }
-
-            .method-card {
-                background-color: #FDFBF7;
-                border: 1px solid #E6DFD5;
-                border-radius: 10px;
-                padding: 22px;
-            }
-
-            .method-card h4 {
-                color: #3E2723;
-                font-size: 1.05rem;
-                margin-bottom: 8px;
-                font-weight: 600;
-            }
-
-            .method-card p {
-                font-size: 0.9rem;
-                color: #5D4037;
-                line-height: 1.5;
-            }
-
-            .query-box {
-                background-color: #3E2723;
-                color: #FDFBF7;
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 25px;
-                border-left: 5px solid #8D6E63;
-            }
-
-            .query-box h4 {
-                color: #D7CCC8;
-                font-size: 0.85rem;
-                text-transform: uppercase;
-                letter-spacing: 0.8px;
-                margin-bottom: 10px;
-            }
-
-            .query-code {
-                font-family: 'Courier New', Courier, monospace;
-                font-size: 0.88rem;
-                color: #E2D7C5;
-                word-break: break-all;
-                line-height: 1.5;
-                background-color: rgba(255, 255, 255, 0.05);
-                padding: 12px;
-                border-radius: 6px;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .query-note {
-                font-size: 0.88rem;
-                color: #6D4C41;
-                margin-top: 12px;
-                font-style: italic;
-            }
-        </style>
-
+        <!-- SEZIONE METODOLOGIA DI RICERCA -->
         <section class="methodology-section">
             <div class="section-title-sub">FRAMEWORK DI RICERCA</div>
             <h2 class="section-main-title" style="font-size: 1.5rem; margin-bottom: 10px;">Obiettivo Generale e Metodologia</h2>
@@ -455,9 +456,9 @@
                 </div>
             </div>
 
-            <!-- QUERY UTILIZZATA -->
+            <!-- 1. QUERY ANALISI MACRO -->
             <div class="query-box">
-                <h4>Stringa di Ricerca Utilizzata per l'analisi Macro</h4>
+                <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MACRO</h4>
                 <div class="query-code">
                     (title:(plastic* OR polymer* OR PET) OR abstract:(plastic* OR polymer* OR PET)) AND (title:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation") OR abstract:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation"))
                 </div>
@@ -465,51 +466,35 @@
             <p class="query-note">
                 <strong>Nota metodologica:</strong> La ricerca è stata deliberatamente limitata richiedendo al server di mostrare solo i brevetti in cui le parole chiave fossero contenute esclusivamente nel titolo o nell'abstract, per considerare unicamente le famiglie di brevetti che pongono la bioconversione della plastica come elemento principale della propria invenzione.
             </p>
+
+            <!-- 2. QUERY ANALISI MICRO GENERALE -->
+            <div class="query-box">
+                <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MICRO (GENERALE)</h4>
+                <div class="query-code">
+                    (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase) OR abstract:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase))
+                </div>
+            </div>
+            <p class="query-note">
+                <strong>Nota metodologica:</strong> Questa prima estrazione micro mappa in modo ampio i principali meccanismi ed enzimi di bioconversione/degradazione (PETasi, cutinasi, depolimerasi) presenti nel titolo e nell'abstract dei brevetti.
+            </p>
+
+            <!-- 3. QUERY ANALISI MICRO E. COLI -->
+            <div class="query-box">
+                <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MICRO (FOCUS ESCHERICHIA COLI)</h4>
+                <div class="query-code">
+                    (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:("Escherichia coli" OR "E. coli") OR abstract:("Escherichia coli" OR "E. coli")) AND (title:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase) OR abstract:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase))
+                </div>
+            </div>
+            <p class="query-note">
+                <strong>Nota metodologica:</strong> Questo sotto-insieme isola esclusivamente le famiglie brevettuali che citano esplicitamente Escherichia coli o E. coli come piattaforma biologica o sistema di espressione per la degradazione della plastica.
+            </p>
+
         </section>
-<!-- BOX CONTENITORE PRINCIPALE (CHIARO / BEIGE) -->
-<div class="methodology-card">
-
-    <!-- 1. STRINGA MACRO -->
-    <div class="query-box">
-        <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MACRO</h4>
-        <div class="query-code">
-            (title:(plastic* OR polymer* OR PET) OR abstract:(plastic* OR polymer* OR PET)) AND (title:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation") OR abstract:(biodegradat* OR bioconversion OR "bio-recycling" OR "enzymatic degradation" OR "microbial degradation"))
-        </div>
-    </div>
-    <p class="nota-metodologica">
-        <em><strong>Nota metodologica:</strong> La ricerca è stata deliberatamente limitata richiedendo al server di mostrare solo i brevetti in cui le parole chiave fossero contenute esclusivamente nel titolo o nell'abstract, per considerare unicamente le famiglie di brevetti che pongono la bioconversione della plastica come elemento principale della propria invenzione.</em>
-    </p>
-
-    <!-- 2. STRINGA MICRO GENERALE -->
-    <div class="query-box">
-        <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MICRO (GENERALE)</h4>
-        <div class="query-code">
-            (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase) OR abstract:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase))
-        </div>
-    </div>
-    <p class="nota-metodologica">
-        <em><strong>Nota metodologica:</strong> Questa prima estrazione micro mappa in modo ampio i principali meccanismi ed enzimi di bioconversione/degradazione (PETasi, cutinasi, depolimerasi) presenti nel titolo e nell'abstract dei brevetti.</em>
-    </p>
-
-    <!-- 3. STRINGA MICRO E. COLI -->
-    <div class="query-box">
-        <h4>STRINGA DI RICERCA UTILIZZATA PER L'ANALISI MICRO (FOCUS ESCHERICHIA COLI)</h4>
-        <div class="query-code">
-            (title:(plastic* OR polymer* OR PET OR PLA OR polyester*) OR abstract:(plastic* OR polymer* OR PET OR PLA OR polyester*)) AND (title:("Escherichia coli" OR "E. coli") OR abstract:("Escherichia coli" OR "E. coli")) AND (title:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase) OR abstract:("enzymatic degradation" OR "microbial degradation" OR depolymerization OR bioconversion OR "bio-recycling" OR depolymerase OR PETase OR cutinase))
-        </div>
-    </div>
-    <p class="nota-metodologica">
-        <em><strong>Nota metodologica:</strong> Questo sotto-insieme isola esclusivamente le famiglie brevettuali che citano esplicitamente Escherichia coli o E. coli come piattaforma biologica o sistema di espressione per la degradazione della plastica.</em>
-    </p>
-
-</div>
-
-        
-   
-
-
 
     </main>
 
 </body>
 </html>
+
+
+
