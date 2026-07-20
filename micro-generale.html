@@ -1,420 +1,251 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analisi Micro Generale | ProPla Patent Landscape</title>
-    
-    <!-- Font e Icone -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- HEADER BANNER MARRONE -->
+<div class="header-banner">
+    <h1>Analisi Micro Generale</h1>
+    <p>Panoramica estesa sul perimetro tecnologico legato alle soluzioni biologiche ed enzimatiche per la bioconversione</p>
+</div>
 
-    <style>
-        :root {
-            --primary-dark: #2b1810;
-            --accent-warm: #8c3b2b;
-            --bg-light: #fcfbfa;
-            --card-bg: #ffffff;
-            --text-dark: #2b1810;
-            --text-muted: #5a524e;
-            --border-color: #e2dbd5;
-            --badge-bg: #f0e8e4;
-        }
+<!-- CONTENITORE PRINCIPALE -->
+<div class="content-container">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .back-nav {
-            margin-bottom: 25px;
-        }
-
-        .back-nav a {
-            color: var(--accent-warm);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.2s;
-        }
-
-        .back-nav a:hover {
-            color: var(--primary-dark);
-        }
-
-        /* Header e Introduzione */
-        .intro-header {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-            margin-bottom: 35px;
-        }
-
-        .intro-header h1 {
-            color: var(--primary-dark);
-            font-size: 2rem;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .intro-header p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-        }
-
-        .meta-stats {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .stat-badge {
-            background: var(--badge-bg);
-            color: var(--primary-dark);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .stat-badge-success {
-            background: #eaf5ea;
-            color: #1e6b20;
-        }
-
-        /* Sezioni dei Box */
-        .analysis-box {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 35px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        .box-title {
-            color: var(--primary-dark);
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 2px solid #f2ece8;
-            padding-bottom: 10px;
-        }
-
-        /* Layout Grid a 2 colonne affiancate */
-        .box-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            align-items: start;
-        }
-
-        @media (min-width: 850px) {
-            .box-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .chart-container {
-            background: #faf8f6;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-        }
-
-        .chart-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* Tabelle Dati */
-        .table-container {
-            width: 100%;
-            max-height: 480px;
-            overflow-y: auto;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.88rem;
-        }
-
-        .data-table th {
-            background-color: var(--primary-dark);
-            color: #ffffff;
-            padding: 10px 14px;
-            text-align: left;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            font-weight: 600;
-        }
-
-        .data-table td {
-            padding: 8px 14px;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-dark);
-        }
-
-        .data-table tbody tr:nth-child(even) {
-            background-color: #fdfbf9;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-
-        <!-- Navigazione Ritorno -->
-        <div class="back-nav">
-            <a href="analisi-micro.html"><i class="fa-solid fa-arrow-left"></i> Torna all'Indice Analisi Micro</a>
+    <!-- QUADRO METODOLOGICO (Card Chiara con Bordo) -->
+    <div class="info-card">
+        <span class="section-subtitle">QUADRO METODOLOGICO</span>
+        <h2>Inquadramento dell'Analisi Micro Generale</h2>
+        <p>L'analisi micro-generale delimita il perimetro tecnologico esteso legato alle soluzioni biologiche, enzimatiche e microbiche per la degradazione, il bioriciclo e la depolimerizzazione delle principali matrici plastiche (PET, PLA, poliesteri).</p>
+        
+        <!-- 3 PILASTRI -->
+        <div class="pillars-grid">
+            <div class="pillar-box">
+                <strong>1. Valutazione della Forza</strong>
+                <p>Analisi della dimensione delle famiglie brevettuali e del numero di citazioni.</p>
+            </div>
+            <div class="pillar-box">
+                <strong>2. Target e Soluzioni Biologiche</strong>
+                <p>Caratterizzazione dei polimeri trattati e delle matrici biologiche.</p>
+            </div>
+            <div class="pillar-box">
+                <strong>3. Anatomia delle Rivendicazioni</strong>
+                <p>Esame delle claims per comprendere cosa viene tutelato.</p>
+            </div>
         </div>
-
-        <!-- INTRODUZIONE GENERALE -->
-        <header class="intro-header">
-            <h1><i class="fa-solid fa-chart-pie"></i> Analisi Micro Generale (Focus Ampio)</h1>
-            <p>
-                L'analisi micro-generale delimita il perimetro tecnologico esteso legato alle soluzioni biologiche, enzimatiche e microbiche per la degradazione, il bioriciclo e la depolimerizzazione delle principali matrici plastiche (PET, PLA, poliesteri).
-            </p>
-            <p>
-                A differenza dell'analisi macro, questa fase scende nel dettaglio della forza brevettuale, delle sottoclassificazioni funzionali e dei singoli attori industriali ed accademici per valutare il panorama competitivo globale in cui si inserisce il progetto <strong>ProPla</strong>.
-            </p>
-
-            <div class="meta-stats">
-                <span class="stat-badge"><i class="fa-solid fa-folder"></i> 181 Famiglie Semplici</span>
-                <span class="stat-badge"><i class="fa-solid fa-folder-tree"></i> 179 Famiglie Estese</span>
-                <span class="stat-badge stat-badge-success"><i class="fa-solid fa-check"></i> Elevata Coerenza del Dataset</span>
-            </div>
-        </header>
-
-        <!-- BOX 1: TREND TEMPORALE -->
-        <section class="analysis-box">
-            <h2 class="box-title"><i class="fa-solid fa-chart-line"></i> 1. Trend Temporale delle Pubblicazioni (1990 - 2026)</h2>
-            <div class="box-grid">
-                <div class="chart-container">
-                    <img src="trend_temporale_micro_generale.png" alt="Trend Temporale Micro Generale">
-                </div>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Publication Year</th>
-                                <th class="text-center">Document Count</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1990</td><td class="text-center">1</td></tr>
-                            <tr><td>1998</td><td class="text-center">3</td></tr>
-                            <tr><td>1999</td><td class="text-center">1</td></tr>
-                            <tr><td>2003</td><td class="text-center">1</td></tr>
-                            <tr><td>2007</td><td class="text-center">1</td></tr>
-                            <tr><td>2008</td><td class="text-center">2</td></tr>
-                            <tr><td>2009</td><td class="text-center">1</td></tr>
-                            <tr><td>2010</td><td class="text-center">3</td></tr>
-                            <tr><td>2011</td><td class="text-center">3</td></tr>
-                            <tr><td>2012</td><td class="text-center">4</td></tr>
-                            <tr><td>2013</td><td class="text-center">8</td></tr>
-                            <tr><td>2014</td><td class="text-center">8</td></tr>
-                            <tr><td>2015</td><td class="text-center">8</td></tr>
-                            <tr><td>2016</td><td class="text-center">6</td></tr>
-                            <tr><td>2017</td><td class="text-center">8</td></tr>
-                            <tr><td>2018</td><td class="text-center">10</td></tr>
-                            <tr><td>2019</td><td class="text-center">9</td></tr>
-                            <tr><td>2020</td><td class="text-center">5</td></tr>
-                            <tr><td>2021</td><td class="text-center">24</td></tr>
-                            <tr><td>2022</td><td class="text-center">16</td></tr>
-                            <tr><td>2023</td><td class="text-center">25</td></tr>
-                            <tr><td>2024</td><td class="text-center">32</td></tr>
-                            <tr><td>2025</td><td class="text-center">19</td></tr>
-                            <tr><td>2026</td><td class="text-center">16</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- BOX 2: MAPPATURA GEOGRAFICA -->
-        <section class="analysis-box">
-            <h2 class="box-title"><i class="fa-solid fa-earth-americas"></i> 2. Mappatura Geografica (Giurisdizioni)</h2>
-            <div class="box-grid">
-                <div class="chart-container">
-                    <img src="mappatura_geografica_micro_generale.png" alt="Mappatura Geografica Micro Generale">
-                </div>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Jurisdiction</th>
-                                <th class="text-center">Document Count</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>China</td><td class="text-center">173</td></tr>
-                            <tr><td>United States</td><td class="text-center">22</td></tr>
-                            <tr><td>WO - WIPO</td><td class="text-center">8</td></tr>
-                            <tr><td>European Patents</td><td class="text-center">2</td></tr>
-                            <tr><td>United Kingdom</td><td class="text-center">2</td></tr>
-                            <tr><td>Taiwan</td><td class="text-center">2</td></tr>
-                            <tr><td>Australia</td><td class="text-center">1</td></tr>
-                            <tr><td>Eurasian Patents</td><td class="text-center">1</td></tr>
-                            <tr><td>Spain</td><td class="text-center">1</td></tr>
-                            <tr><td>Japan</td><td class="text-center">1</td></tr>
-                            <tr><td>Korea, Republic of</td><td class="text-center">1</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- BOX 3: CODICI CPC -->
-        <section class="analysis-box">
-            <h2 class="box-title"><i class="fa-solid fa-tags"></i> 3. Classificazione Tecnologica (Codici CPC)</h2>
-            <div class="box-grid">
-                <div class="chart-container">
-                    <img src="treemap_cpc_micro_generale.png" alt="Treemap Codici CPC Micro Generale">
-                </div>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>CPC Classification Code</th>
-                                <th class="text-center">Document Count</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>C12N15/70</td><td class="text-center">59</td></tr>
-                            <tr><td>C12R2001/19</td><td class="text-center">36</td></tr>
-                            <tr><td>C12N9/18</td><td class="text-center">29</td></tr>
-                            <tr><td>Y02W30/62</td><td class="text-center">29</td></tr>
-                            <tr><td>A01N25/00</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N25/10</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N59/00</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N59/06</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N59/14</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N59/16</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N59/20</td><td class="text-center">23</td></tr>
-                            <tr><td>A01N59/26</td><td class="text-center">23</td></tr>
-                            <tr><td>C03B19/1005</td><td class="text-center">23</td></tr>
-                            <tr><td>C03B37/01</td><td class="text-center">23</td></tr>
-                            <tr><td>C03C10/0009</td><td class="text-center">23</td></tr>
-                            <tr><td>C03C2204/02</td><td class="text-center">23</td></tr>
-                            <tr><td>C03C3/062</td><td class="text-center">23</td></tr>
-                            <tr><td>C03C3/064</td><td class="text-center">23</td></tr>
-                            <tr><td>C03C3/066</td><td class="text-center">23</td></tr>
-                            <tr><td>C03C3/085</td><td class="text-center">23</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- BOX 4: TOP APPLICANTS -->
-        <section class="analysis-box">
-            <h2 class="box-title"><i class="fa-solid fa-building-columns"></i> 4. Principali Richiedenti (Top 20 Applicants)</h2>
-            <div class="box-grid">
-                <div class="chart-container">
-                    <img src="top_applicants_micro_generale.png" alt="Top Applicants Micro Generale">
-                </div>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Applicant Name Exact</th>
-                                <th class="text-center">Document Count</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Corning INC</td><td class="text-center">23</td></tr>
-                            <tr><td>Univ Jiangnan</td><td class="text-center">16</td></tr>
-                            <tr><td>Nanjing University Of Technology</td><td class="text-center">12</td></tr>
-                            <tr><td>Univ Tianjin</td><td class="text-center">8</td></tr>
-                            <tr><td>Univ Shanghai Jiaotong</td><td class="text-center">6</td></tr>
-                            <tr><td>Third Institute Of Oceanography Mini Of Natural Resources</td><td class="text-center">4</td></tr>
-                            <tr><td>South China Sea Inst Oceanology Cas</td><td class="text-center">3</td></tr>
-                            <tr><td>Suzhou Jonathan New Materials Technology CO LTD</td><td class="text-center">3</td></tr>
-                            <tr><td>Univ Madrid Complutense</td><td class="text-center">3</td></tr>
-                            <tr><td>Univ South China Tech</td><td class="text-center">3</td></tr>
-                            <tr><td>Univ Tianjin Science & Tech</td><td class="text-center">3</td></tr>
-                            <tr><td>Chen Guoqiang</td><td class="text-center">2</td></tr>
-                            <tr><td>Chen Jinchun</td><td class="text-center">2</td></tr>
-                            <tr><td>Chongqing Pelite New Mat CO LTD</td><td class="text-center">2</td></tr>
-                            <tr><td>Dalian Inst Chem & Physics Cas</td><td class="text-center">2</td></tr>
-                            <tr><td>Gao Haijun</td><td class="text-center">2</td></tr>
-                            <tr><td>Metabolic Explorer SA</td><td class="text-center">2</td></tr>
-                            <tr><td>Nanjing Hesu Times Antibiosis Materials Tech CO LTD</td><td class="text-center">2</td></tr>
-                            <tr><td>Ocean Univ China</td><td class="text-center">2</td></tr>
-                            <tr><td>Shanghai Pelite Chemical New Mat CO LTD</td><td class="text-center">2</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- BOX 5: STATO LEGALE -->
-        <section class="analysis-box">
-            <h2 class="box-title"><i class="fa-solid fa-scale-balanced"></i> 5. Stato Legale dei Brevetti (Legal Status)</h2>
-            <div class="box-grid">
-                <div class="chart-container">
-                    <img src="stato_legale_micro_generale.png" alt="Stato Legale Brevetti Micro Generale">
-                </div>
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Legal Status</th>
-                                <th class="text-center">Document Count</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Pending</td><td class="text-center">72</td></tr>
-                            <tr><td>Discontinued</td><td class="text-center">63</td></tr>
-                            <tr><td>Active</td><td class="text-center">56</td></tr>
-                            <tr><td>Inactive</td><td class="text-center">18</td></tr>
-                            <tr><td>Expired</td><td class="text-center">5</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
     </div>
 
-</body>
-</html>
+    <!-- METRICHE STATISTICHE (I due box affiancati come in Macro) -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-label">FAMIGLIE BREVETTUALI ESTESE</span>
+            <div class="stat-value">179</div>
+            <p class="stat-desc">Raccolta di domande di brevetto che derivano da contenuti tecnici simili.</p>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">FAMIGLIE SEMPLICI</span>
+            <div class="stat-value">181</div>
+            <p class="stat-desc">Gruppo di documenti brevettuali che derivano dallo stesso brevetto iniziale.</p>
+        </div>
+    </div>
+
+    <!-- BOX 1: TREND TEMPORALE -->
+    <div class="section-card">
+        <div class="card-header">
+            <span class="badge-number">1</span>
+            <h3>Trend Temporale</h3>
+        </div>
+        <p class="section-desc">Analisi della traiettoria storica dei depositi brevettuali (1990-2026).</p>
+        
+        <div class="box-body-grid">
+            <div class="chart-box">
+                <img src="trend_temporale_micro_generale.png" alt="Trend Temporale">
+            </div>
+            <div class="table-box">
+                <table class="macro-style-table">
+                    <thead>
+                        <tr><th>Publication Year</th><th>Document Count</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1990</td><td>1</td></tr>
+                        <tr><td>1998</td><td>3</td></tr>
+                        <tr><td>1999</td><td>1</td></tr>
+                        <tr><td>2003</td><td>1</td></tr>
+                        <tr><td>2007</td><td>1</td></tr>
+                        <tr><td>2008</td><td>2</td></tr>
+                        <tr><td>2009</td><td>1</td></tr>
+                        <tr><td>2010</td><td>3</td></tr>
+                        <tr><td>2011</td><td>3</td></tr>
+                        <tr><td>2012</td><td>4</td></tr>
+                        <tr><td>2013</td><td>8</td></tr>
+                        <tr><td>2014</td><td>8</td></tr>
+                        <tr><td>2015</td><td>8</td></tr>
+                        <tr><td>2016</td><td>6</td></tr>
+                        <tr><td>2017</td><td>8</td></tr>
+                        <tr><td>2018</td><td>10</td></tr>
+                        <tr><td>2019</td><td>9</td></tr>
+                        <tr><td>2020</td><td>5</td></tr>
+                        <tr><td>2021</td><td>24</td></tr>
+                        <tr><td>2022</td><td>16</td></tr>
+                        <tr><td>2023</td><td>25</td></tr>
+                        <tr><td>2024</td><td>32</td></tr>
+                        <tr><td>2025</td><td>19</td></tr>
+                        <tr><td>2026</td><td>16</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOX 2: MAPPATURA GEOGRAFICA -->
+    <div class="section-card">
+        <div class="card-header">
+            <span class="badge-number">2</span>
+            <h3>Mappatura Geografica</h3>
+        </div>
+        <p class="section-desc">Mappatura della geopolitica dei depositi brevettuali.</p>
+        
+        <div class="box-body-grid">
+            <div class="chart-box">
+                <img src="mappatura_geografica_micro_generale.png" alt="Mappatura Geografica">
+            </div>
+            <div class="table-box">
+                <table class="macro-style-table">
+                    <thead>
+                        <tr><th>Jurisdiction</th><th>Document Count</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>China</td><td>173</td></tr>
+                        <tr><td>United States</td><td>22</td></tr>
+                        <tr><td>WO - WIPO</td><td>8</td></tr>
+                        <tr><td>European Patents</td><td>2</td></tr>
+                        <tr><td>United Kingdom</td><td>2</td></tr>
+                        <tr><td>Taiwan</td><td>2</td></tr>
+                        <tr><td>Australia</td><td>1</td></tr>
+                        <tr><td>Eurasian Patents</td><td>1</td></tr>
+                        <tr><td>Spain</td><td>1</td></tr>
+                        <tr><td>Japan</td><td>1</td></tr>
+                        <tr><td>Korea, Republic of</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOX 3: CODICI CPC -->
+    <div class="section-card">
+        <div class="card-header">
+            <span class="badge-number">3</span>
+            <h3>Classificazione Tecnologica (CPC)</h3>
+        </div>
+        <p class="section-desc">Distribuzione dei codici di classificazione brevettuale CPC.</p>
+        
+        <div class="box-body-grid">
+            <div class="chart-box">
+                <img src="treemap_cpc_micro_generale.png" alt="CPC Treemap">
+            </div>
+            <div class="table-box">
+                <table class="macro-style-table">
+                    <thead>
+                        <tr><th>CPC Classification Code</th><th>Document Count</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>C12N15/70</td><td>59</td></tr>
+                        <tr><td>C12R2001/19</td><td>36</td></tr>
+                        <tr><td>C12N9/18</td><td>29</td></tr>
+                        <tr><td>Y02W30/62</td><td>29</td></tr>
+                        <tr><td>A01N25/00</td><td>23</td></tr>
+                        <tr><td>A01N25/10</td><td>23</td></tr>
+                        <tr><td>A01N59/00</td><td>23</td></tr>
+                        <tr><td>A01N59/06</td><td>23</td></tr>
+                        <tr><td>A01N59/14</td><td>23</td></tr>
+                        <tr><td>A01N59/16</td><td>23</td></tr>
+                        <tr><td>A01N59/20</td><td>23</td></tr>
+                        <tr><td>A01N59/26</td><td>23</td></tr>
+                        <tr><td>C03B19/1005</td><td>23</td></tr>
+                        <tr><td>C03B37/01</td><td>23</td></tr>
+                        <tr><td>C03C10/0009</td><td>23</td></tr>
+                        <tr><td>C03C2204/02</td><td>23</td></tr>
+                        <tr><td>C03C3/062</td><td>23</td></tr>
+                        <tr><td>C03C3/064</td><td>23</td></tr>
+                        <tr><td>C03C3/066</td><td>23</td></tr>
+                        <tr><td>C03C3/085</td><td>23</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOX 4: TOP APPLICANTS -->
+    <div class="section-card">
+        <div class="card-header">
+            <span class="badge-number">4</span>
+            <h3>Principali Richiedenti (Top 20)</h3>
+        </div>
+        <p class="section-desc">Classifica dei principali soggetti depositanti.</p>
+        
+        <div class="box-body-grid">
+            <div class="chart-box">
+                <img src="top_applicants_micro_generale.png" alt="Top Applicants">
+            </div>
+            <div class="table-box">
+                <table class="macro-style-table">
+                    <thead>
+                        <tr><th>Applicant Name Exact</th><th>Document Count</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Corning INC</td><td>23</td></tr>
+                        <tr><td>Univ Jiangnan</td><td>16</td></tr>
+                        <tr><td>Nanjing University Of Technology</td><td>12</td></tr>
+                        <tr><td>Univ Tianjin</td><td>8</td></tr>
+                        <tr><td>Univ Shanghai Jiaotong</td><td>6</td></tr>
+                        <tr><td>Third Institute Of Oceanography Mini Of Natural Resources</td><td>4</td></tr>
+                        <tr><td>South China Sea Inst Oceanology Cas</td><td>3</td></tr>
+                        <tr><td>Suzhou Jonathan New Materials Technology CO LTD</td><td>3</td></tr>
+                        <tr><td>Univ Madrid Complutense</td><td>3</td></tr>
+                        <tr><td>Univ South China Tech</td><td>3</td></tr>
+                        <tr><td>Univ Tianjin Science & Tech</td><td>3</td></tr>
+                        <tr><td>Chen Guoqiang</td><td>2</td></tr>
+                        <tr><td>Chen Jinchun</td><td>2</td></tr>
+                        <tr><td>Chongqing Pelite New Mat CO LTD</td><td>2</td></tr>
+                        <tr><td>Dalian Inst Chem & Physics Cas</td><td>2</td></tr>
+                        <tr><td>Gao Haijun</td><td>2</td></tr>
+                        <tr><td>Metabolic Explorer SA</td><td>2</td></tr>
+                        <tr><td>Nanjing Hesu Times Antibiosis Materials Tech CO LTD</td><td>2</td></tr>
+                        <tr><td>Ocean Univ China</td><td>2</td></tr>
+                        <tr><td>Shanghai Pelite Chemical New Mat CO LTD</td><td>2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOX 5: STATO LEGALE -->
+    <div class="section-card">
+        <div class="card-header">
+            <span class="badge-number">5</span>
+            <h3>Stato Legale</h3>
+        </div>
+        <p class="section-desc">Distribuzione dello stato giuridico dei brevetti.</p>
+        
+        <div class="box-body-grid">
+            <div class="chart-box">
+                <img src="stato_legale_micro_generale.png" alt="Stato Legale">
+            </div>
+            <div class="table-box">
+                <table class="macro-style-table">
+                    <thead>
+                        <tr><th>Legal Status</th><th>Document Count</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Pending</td><td>72</td></tr>
+                        <tr><td>Discontinued</td><td>63</td></tr>
+                        <tr><td>Active</td><td>56</td></tr>
+                        <tr><td>Inactive</td><td>18</td></tr>
+                        <tr><td>Expired</td><td>5</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 
 
